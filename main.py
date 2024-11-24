@@ -3,6 +3,8 @@ from tkinter import messagebox
 from random import choice, randint, shuffle
 import pyperclip
 import json
+import sys
+from os import path
 
 # CONSTANTS
 EMAIL = ''
@@ -11,6 +13,12 @@ LIGHT_BLUE = '#F0EDCF'
 BLUE = '#0B60B0'
 FONT_1 = ('Arial', 12, 'bold')
 FONT_2 = ('Arial', 12)
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', path.dirname(path.abspath(__file__)))
+    return path.join(base_path, relative_path)
 
 
 # Password Generator
@@ -96,7 +104,7 @@ window.config(padx=35, pady=35, bg=WHITE)
 
 # Image
 canvas = Canvas(width=200, height=200, bg=WHITE, highlightthickness=0)
-logo_img = PhotoImage(file='logo.png')
+logo_img = PhotoImage(file=resource_path('logo.png'))
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(column=1, row=0)
 
