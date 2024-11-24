@@ -1,6 +1,6 @@
 # Password Manager
 
-<img src='./screenshots/screenshot.png' width='1500'>
+<img src='./screenshots/screenshot.png' width='1000'>
 
 Program which stores passwords in json file. Can even generate passwords or search existing login credentails.
 ## Used technologies/frameworks/libraries/languages
